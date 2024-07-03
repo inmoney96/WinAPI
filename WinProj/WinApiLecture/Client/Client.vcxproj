@@ -120,6 +120,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -133,6 +135,9 @@
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="CObject.h" />
+    <ClInclude Include="CScene.h" />
+    <ClInclude Include="CSceneMgr.h" />
+    <ClInclude Include="CScene_Start.h" />
     <ClInclude Include="CTimeMgr.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="framework.h" />
@@ -145,6 +150,9 @@
     <ClCompile Include="CCore.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CObject.cpp" />
+    <ClCompile Include="CScene.cpp" />
+    <ClCompile Include="CSceneMgr.cpp" />
+    <ClCompile Include="CScene_Start.cpp" />
     <ClCompile Include="CTimeMgr.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

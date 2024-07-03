@@ -1,4 +1,6 @@
 #pragma once
+
+
 class CObject
 {
 public:
@@ -13,7 +15,7 @@ public:
 	Vec2 GetScale() { return m_vScale; }
 
 	CObject();
-	~CObject();
+	virtual ~CObject();
 
 };
 

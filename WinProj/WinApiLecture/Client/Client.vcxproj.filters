@@ -28,14 +28,26 @@
     <Filter Include="Engine\03. Manager">
       <UniqueIdentifier>{97e9e111-4a66-4fc1-af32-30fbf800c741}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\03. Manager\keyMgr">
-      <UniqueIdentifier>{fa4830de-2183-4b70-911a-cb49523447cf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\04. Object">
       <UniqueIdentifier>{5b69133b-5af3-4912-a592-beef1aaddf7c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\03. Manager\timeMgr">
+    <Filter Include="Engine\05. Scene">
+      <UniqueIdentifier>{342abce8-b98d-45f9-b779-681e6ab251ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\SceneMgr">
+      <UniqueIdentifier>{b396d4f9-ee8b-40fe-a8af-89436f8402fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\KeyMgr">
+      <UniqueIdentifier>{fa4830de-2183-4b70-911a-cb49523447cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\TimeMgr">
       <UniqueIdentifier>{ea550136-ba99-4406-bafd-8f1f4a2a6563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\Scene_Start">
+      <UniqueIdentifier>{0e13eb7b-ee3b-436c-9ff9-eb10776332ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\SCene_Tool">
+      <UniqueIdentifier>{5409b57a-2154-4dec-8b0e-56136714fec2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,7 +70,7 @@
       <Filter>Engine\01. Header</Filter>
     </ClInclude>
     <ClInclude Include="CKeyMgr.h">
-      <Filter>Engine\03. Manager\keyMgr</Filter>
+      <Filter>Engine\03. Manager\KeyMgr</Filter>
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="CObject.h">
@@ -68,7 +80,16 @@
       <Filter>Engine\01. Header</Filter>
     </ClInclude>
     <ClInclude Include="CTimeMgr.h">
-      <Filter>Engine\03. Manager\timeMgr</Filter>
+      <Filter>Engine\03. Manager\TimeMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Engine\05. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>Engine\03. Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene_Start.h">
+      <Filter>Engine\05. Scene\Scene_Start</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -76,14 +97,23 @@
       <Filter>Engine\02. Core</Filter>
     </ClCompile>
     <ClCompile Include="CKeyMgr.cpp">
-      <Filter>Engine\03. Manager\keyMgr</Filter>
+      <Filter>Engine\03. Manager\KeyMgr</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CObject.cpp">
       <Filter>Engine\04. Object</Filter>
     </ClCompile>
     <ClCompile Include="CTimeMgr.cpp">
-      <Filter>Engine\03. Manager\timeMgr</Filter>
+      <Filter>Engine\03. Manager\TimeMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Engine\05. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>Engine\03. Manager\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene_Start.cpp">
+      <Filter>Engine\05. Scene\Scene_Start</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
