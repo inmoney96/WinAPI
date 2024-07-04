@@ -7,7 +7,6 @@
 #include "CSceneMgr.h"
 
 
-CObject g_obj;
 
 CCore::CCore()
 	: m_hWnd(0)
@@ -50,10 +49,6 @@ int CCore::init(HWND _hWnd, POINT _ptResolution)
 	CKeyMgr::GetInst()->init();
 	CSceneMgr::GetInst()->init();
 
-	g_obj.SetPos(Vec2((float)( m_ptResolution.x/2),(float)(_ptResolution.y/2)));
-	g_obj.SetScale(Vec2{100,100});
-
-
 
 	return S_OK;
 }
@@ -63,47 +58,12 @@ void CCore::progress()
 {
 	CTimeMgr::GetInst()->update();
 	CKeyMgr::GetInst()->update();
-
-
-	update();
-
-	render();
-
-
-}
-
-void CCore::update()
-{
-	Vec2 vPos = g_obj.GetPos();
-
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::LEFT)==KEY_STATE::TAP) {
-
-		vPos.x -= 100.f *CTimeMgr::GetInst()->GetfDT();
-	}
-
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::RIGHT) == KEY_STATE::TAP) {
-
-		vPos.x += 100.f * CTimeMgr::GetInst()->GetfDT();
-	}
-	g_obj.SetPos(vPos);
-}
-
-void CCore::render()
-{
-	//clear
+	CSceneMgr::GetInst()->update();
 
 	Rectangle(m_memDC, -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
 
+	CSceneMgr::GetInst()->render(m_memDC);
 
-	//±×¸®±â
-	Vec2 vPos = g_obj.GetPos();
-	Vec2 vScale = g_obj.GetScale();
-
-	Rectangle(m_memDC	, vPos.x - vScale.x / 2.f
-						, vPos.y - vScale.y / 2.f
-						, vPos.x + vScale.x / 2.f
-						, vPos.y + vScale.y / 2.f);
-
-	BitBlt(m_hdc,0,0,m_ptResolution.x,m_ptResolution.y,m_memDC, 0,0,SRCCOPY);
+	BitBlt(m_hdc, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
 
 }

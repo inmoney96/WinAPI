@@ -1,19 +1,6 @@
-﻿  CCore.cpp
-C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CCore.cpp(104,16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CCore.cpp(103,16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CCore.cpp(102,16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CCore.cpp(101,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  CKeyMgr.cpp
-  CObject.cpp
-  CScene.cpp
-  CTimeMgr.cpp
-C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CScene.h(8,8): error C2143: 구문 오류: ';'이(가) '<' 앞에 없습니다.
-  (소스 파일 'CScene.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CScene.h(8,8): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-  (소스 파일 'CScene.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CScene.h(8,15): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-  (소스 파일 'CScene.cpp'을(를) 컴파일하는 중)
-  
-  main.cpp
+﻿LINK : warning C4727: 타임스탬프가 동일한 c:\users\administrator\desktop\git\winproj\winapilecture\client\x64\release\client.pch PCH가 c:\users\administrator\desktop\git\winproj\winapilecture\client\x64\release\cscene_start.obj 및 c:\users\administrator\desktop\git\winproj\winapilecture\client\x64\release\cscenemgr.obj에 있습니다.  첫 번째 PCH를 사용합니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 223 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  Client.vcxproj -> C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\x64\Release\Client.exe

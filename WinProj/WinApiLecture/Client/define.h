@@ -11,7 +11,7 @@
 						type();\
 						~type();
 
-#define fDT CTimeMgr::GetInst()->getfDT()
+#define fDT CTimeMgr::GetInst()->GetfDT()
 
 #define DT CTimeMgr::GetInst()->getDT()
 
@@ -34,4 +34,4 @@ enum class SCENE_TYPE
 	STAGE_02,
 
 	END,
-}
+};

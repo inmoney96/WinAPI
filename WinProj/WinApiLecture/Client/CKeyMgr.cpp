@@ -55,12 +55,12 @@ void CKeyMgr::init()
 void CKeyMgr::update()
 {
 
-	HWND hMainWnd = CCore::GetInst()->GetMainHwnd();
+	//HWND hMainWnd = CCore::GetInst()->GetMainHwnd();
 	HWND hWnd = GetFocus();
 
 	if (nullptr != hWnd) {
 		for (int i = 0; i < (int)KEY::LAST; ++i) {
-			if (GetAsyncKeyState(g_arrVK[i] & 0x8000)) {
+			if (GetAsyncKeyState(g_arrVK[i]) & 0x8000) {
 				if (m_vecKey[i].bPrevPush) {
 					m_vecKey[i].eState = KEY_STATE::HOLD;
 				}
