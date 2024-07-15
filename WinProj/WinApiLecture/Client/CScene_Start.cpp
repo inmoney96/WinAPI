@@ -6,6 +6,10 @@
 #include "CPlayer.h"
 #include "CMonster.h"
 #include "CCore.h"
+
+#include "CPathMgr.h"
+#include "CTexture.h"
+
 CScene_Start::CScene_Start()
 {
 }
@@ -16,6 +20,10 @@ CScene_Start::~CScene_Start()
 
 void CScene_Start::Enter()
 {
+
+
+
+
 	CObject* pObj = new CPlayer;
 	pObj->SetPos(Vec2(640.f,384.f));
 	pObj->SetScale(Vec2(100.f,100.f));

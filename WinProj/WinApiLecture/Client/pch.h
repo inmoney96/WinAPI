@@ -9,6 +9,12 @@ using std::vector;
 using std::string;
 using std::wstring;
 
+#include <map>
+using std::map;
+using std::make_pair;
+
+
+#pragma comment(lib, "Msimg32.lib")
 
 #include <math.h>
 #include <assert.h>

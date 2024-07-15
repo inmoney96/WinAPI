@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CSceneMgr.h"
 #include "CScene_Start.h"
+
 CSceneMgr::CSceneMgr()
 	: m_arrScene()
 	, m_pCurScene(nullptr)

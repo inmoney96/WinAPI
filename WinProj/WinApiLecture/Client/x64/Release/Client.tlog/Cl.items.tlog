@@ -1,8 +1,15 @@
 C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CCore.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CCore.obj
 C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CKeyMgr.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CKeyMgr.obj
+C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CMissile.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CMissile.obj
 C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CObject.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CObject.obj
+C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CPathMgr.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CPathMgr.obj
+C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CPlayer.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CPlayer.obj
+C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CRes.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CRes.obj
 C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CScene.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CScene.obj
 C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CSceneMgr.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CSceneMgr.obj
 C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CScene_Start.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CScene_Start.obj
+C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CSound.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CSound.obj
+C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CTexture.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CTexture.obj
 C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CTimeMgr.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CTimeMgr.obj
 C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\main.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\main.obj
+C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\CMonster.cpp;C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Client\x64\Release\CMonster.obj

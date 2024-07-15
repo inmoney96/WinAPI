@@ -8,6 +8,23 @@
 #include "CTimeMgr.h"
 
 #include "CMissile.h"
+#include "CTexture.h"
+#include "CResMgr.h"
+
+CPlayer::CPlayer()
+	: m_pTex{nullptr}
+{
+	m_pTex = CResMgr::GetInst()->LoadTexture(L"PlayerTex", L"\\bin\\content\\texture\\Player.bmp");
+
+}
+
+CPlayer::~CPlayer()
+{
+
+}
+
+
+
 
 void CPlayer::update()
 {
@@ -36,6 +53,36 @@ void CPlayer::update()
 	SetPos(vPos);
 }
 
+void CPlayer::render(HDC _dc)
+{
+	int iWidth = (int)m_pTex->Width();
+	int iHeight = (int)m_pTex->Height();
+
+	Vec2 vPos = GetPos();
+
+	
+	
+
+	BitBlt(_dc	
+				, int(vPos.x - (float)(iWidth / 2))
+				, int(vPos.y - (float)(iHeight / 2))
+				, iWidth, iHeight
+				, m_pTex->GetDC()
+				, 0,0,SRCCOPY);
+
+	TransparentBlt(_dc
+		, int(vPos.x - (float)(iWidth / 2))
+		, int(vPos.y - (float)(iHeight / 2))
+		, iWidth, iHeight
+		, m_pTex->GetDC()
+		, 0, 0, iWidth, iHeight
+		, RGB(0,0,0));
+
+
+
+	
+}
+
 void CPlayer::CreateMissile()
 {
 	Vec2 vMissilePos = GetPos();
@@ -50,3 +97,4 @@ void CPlayer::CreateMissile()
 	CScene* pCurScene = CSceneMgr::GetInst()->GetCurScene();
 	pCurScene->AddObject(pMissile, GROUP_TYPE::DEFAULT);
 }
+
