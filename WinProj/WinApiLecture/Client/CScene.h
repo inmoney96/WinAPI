@@ -15,6 +15,7 @@ public:
 	const wstring& GetName() { return m_strName; }
 
 	void update();
+	void finalupdate();
 	void render(HDC _dc);
 
 	virtual void Enter() = 0;
@@ -25,6 +26,8 @@ public:
 	void AddObject(CObject* _pObj, GROUP_TYPE _eType) {
 		m_arrObj[(UINT)_eType].push_back(_pObj);
 	}
+
+	const vector<CObject*>& GetGroupObject(GROUP_TYPE _eType) { return m_arrObj[(UINT)_eType]; }
 
 public:
 	CScene();

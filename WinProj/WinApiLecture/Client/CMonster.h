@@ -15,6 +15,10 @@ public:
     void SetMoveDistance(float _f) { m_fMaxDistance = _f; }
     void SetCenterPos(Vec2 _vPos) { m_vCenterPos = _vPos; }
 
+    virtual void OnCollision(CCollider* _pOther) {}
+    virtual void OnCollisionEnter(CCollider* _pOther);
+    virtual void OnCollisionExit(CCollider* _pOther) {}
+
 public:
     virtual void update();
 

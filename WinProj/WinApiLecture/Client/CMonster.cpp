@@ -2,18 +2,22 @@
 #include "CMonster.h"
 
 #include "CTimeMgr.h"
-
+#include "CCollider.h"
 CMonster::CMonster()
 	: m_vCenterPos(Vec2(0.f,0.f))
 	, m_fSpeed(100.f)
 	, m_fMaxDistance(50.f)
 	, m_iDir(1)
 {
+	CreateCollider();
+	GetCollider()->SetScale(Vec2(50.f,50.f));
 }
 
 CMonster::~CMonster()
 {
 }
+
+
 
 void CMonster::update()
 {
@@ -30,4 +34,13 @@ void CMonster::update()
 	}
 
 	SetPos(vCurPos);
+}
+
+void CMonster::OnCollisionEnter(CCollider* _pOther)
+{
+	CObject* pOtherObj = _pOther->GetObj();
+
+
+
+	int a = 0;
 }

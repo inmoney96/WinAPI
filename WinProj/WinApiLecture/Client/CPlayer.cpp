@@ -10,11 +10,16 @@
 #include "CMissile.h"
 #include "CTexture.h"
 #include "CResMgr.h"
+#include "CCollider.h"
 
 CPlayer::CPlayer()
 	: m_pTex{nullptr}
 {
 	m_pTex = CResMgr::GetInst()->LoadTexture(L"PlayerTex", L"\\bin\\content\\texture\\Player.bmp");
+
+	CreateCollider();
+	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
+	GetCollider()->SetScale(Vec2(10.f, 10.f));
 
 }
 
@@ -78,7 +83,7 @@ void CPlayer::render(HDC _dc)
 		, 0, 0, iWidth, iHeight
 		, RGB(0,0,0));
 
-
+	component_render(_dc);
 
 	
 }
