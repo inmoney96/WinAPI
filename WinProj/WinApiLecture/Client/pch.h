@@ -20,3 +20,4 @@ using std::make_pair;
 #include <assert.h>
 #include "define.h"
 #include "struct.h"
+#include "func.h"

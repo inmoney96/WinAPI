@@ -76,14 +76,29 @@ void CCollisionMgr::CollisionGroupUpdate(GROUP_TYPE _eLeft, GROUP_TYPE _eRight)
 			{//충돌중
 				if (iter->second)
 				{// 이전 프레임 충돌
-					pLeftCol->OnCollision(pRightCol);
-					pRightCol->OnCollision(pLeftCol);
+
+					if (vecLeft[i]->IsDead() || vecRight[j]->IsDead())//둘 중 하나 삭제시
+					{
+						pLeftCol->OnCollisionExit(pRightCol);
+						pRightCol->OnCollisionExit(pLeftCol);
+						iter->second = false;
+					}
+					else
+					{
+						pLeftCol->OnCollision(pRightCol);
+						pRightCol->OnCollision(pLeftCol);
+					}
 				}
 				else
 				{
-					pLeftCol->OnCollisionEnter(pRightCol);
-					pRightCol->OnCollisionEnter(pLeftCol);
-					iter->second = true;
+					//이전 안충돌
+					if (!vecLeft[i]->IsDead() || !vecRight[j]->IsDead())//둘 중 하나 삭제시
+					{
+						pLeftCol->OnCollisionEnter(pRightCol);
+						pRightCol->OnCollisionEnter(pLeftCol);
+						iter->second = true;
+					}
+					
 				}
 			}
 			else

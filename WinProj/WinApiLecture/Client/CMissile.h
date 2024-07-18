@@ -15,9 +15,11 @@ public:
     void SetDir(Vec2 _vDir) { m_vDir = _vDir; }
     
 
-private:
+public:
     virtual void update();
     virtual void render(HDC _dc);
+
+    virtual void OnCollisionEnter(CCollider* _pOther);
 
 public:
     CMissile();
