@@ -10,6 +10,10 @@
 #include "CPathMgr.h"
 #include "CTexture.h"
 #include "CCollisionMgr.h"
+
+#include "CKeyMgr.h"
+#include "CSceneMgr.h"
+
 CScene_Start::CScene_Start()
 {
 }
@@ -18,16 +22,27 @@ CScene_Start::~CScene_Start()
 {
 }
 
+void CScene_Start::update()
+{
+	CScene::update();
+
+	if (KEY_TAP(KEY::ENTER))
+	{
+		ChangeScene(SCENE_TYPE::TOOL);
+	}
+
+}
+
 void CScene_Start::Enter()
 {
-
-
-
-
 	CObject* pObj = new CPlayer;
 	pObj->SetPos(Vec2(640.f,384.f));
 	pObj->SetScale(Vec2(100.f,100.f));
 	AddObject(pObj, GROUP_TYPE::PLAYER);
+
+	CObject* pOtherPlayer = pObj->Clone();
+	pOtherPlayer->SetPos(Vec2(710.f, 384.f));
+	AddObject(pOtherPlayer, GROUP_TYPE::PLAYER);
 
 
 	int iMonCount = 16;
@@ -58,5 +73,7 @@ void CScene_Start::Enter()
 
 void CScene_Start::Exit()
 {
+	DeleteAll();
+
 	CCollisionMgr::GetInst()->Reset();
 }

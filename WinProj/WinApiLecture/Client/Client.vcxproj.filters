@@ -58,15 +58,6 @@
     <Filter Include="Engine\04. Object\Missile">
       <UniqueIdentifier>{49d1dcd7-edb7-44c4-b8d2-8bbaa1b21b3e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\06. Resource">
-      <UniqueIdentifier>{8002fb45-8728-46ca-9aa7-89bf5c30947e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\06. Resource\Texture">
-      <UniqueIdentifier>{efc5795e-16da-4c1d-a34a-989c40242188}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\06. Resource\Sound">
-      <UniqueIdentifier>{9a072e74-95ef-43f5-9691-82f72c9bf9eb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\03. Manager\PathMgr">
       <UniqueIdentifier>{fadc125e-bfd8-4e1c-a65f-e011f2c3fc8e}</UniqueIdentifier>
     </Filter>
@@ -84,6 +75,24 @@
     </Filter>
     <Filter Include="Engine\03. Manager\EventMgr">
       <UniqueIdentifier>{6fe5bfa9-7cc9-4a4d-af23-5f0fea60989c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Resource">
+      <UniqueIdentifier>{8002fb45-8728-46ca-9aa7-89bf5c30947e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Resource\Texture">
+      <UniqueIdentifier>{efc5795e-16da-4c1d-a34a-989c40242188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Resource\Sound">
+      <UniqueIdentifier>{9a072e74-95ef-43f5-9691-82f72c9bf9eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07. Component\Animator">
+      <UniqueIdentifier>{d4c68800-1045-4afa-9ee6-1c5d384c9496}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07. Component\Animator\Animation">
+      <UniqueIdentifier>{d2ea945b-f339-4438-bf13-b48ff161eef0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07. Component\Collider">
+      <UniqueIdentifier>{0d51296a-14bb-4e80-95c6-aa65d0c41c44}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -151,9 +160,6 @@
     <ClInclude Include="CResMgr.h">
       <Filter>Engine\03. Manager\ResMgr</Filter>
     </ClInclude>
-    <ClInclude Include="CCollider.h">
-      <Filter>Engine\07. Component</Filter>
-    </ClInclude>
     <ClInclude Include="SelectGDI.h">
       <Filter>Engine\08. Module</Filter>
     </ClInclude>
@@ -165,6 +171,18 @@
     </ClInclude>
     <ClInclude Include="func.h">
       <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene_Tool.h">
+      <Filter>Engine\05. Scene\SCene_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollider.h">
+      <Filter>Engine\07. Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimator.h">
+      <Filter>Engine\07. Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimation.h">
+      <Filter>Engine\07. Component\Animator\Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -214,9 +232,6 @@
     <ClCompile Include="CResMgr.cpp">
       <Filter>Engine\03. Manager\ResMgr</Filter>
     </ClCompile>
-    <ClCompile Include="CCollider.cpp">
-      <Filter>Engine\07. Component</Filter>
-    </ClCompile>
     <ClCompile Include="SelectGDI.cpp">
       <Filter>Engine\08. Module</Filter>
     </ClCompile>
@@ -227,6 +242,18 @@
       <Filter>Engine\03. Manager\EventMgr</Filter>
     </ClCompile>
     <ClCompile Include="func.cpp" />
+    <ClCompile Include="CScene_Tool.cpp">
+      <Filter>Engine\05. Scene\SCene_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollider.cpp">
+      <Filter>Engine\07. Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimator.cpp">
+      <Filter>Engine\07. Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimation.cpp">
+      <Filter>Engine\07. Component\Animator\Animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">

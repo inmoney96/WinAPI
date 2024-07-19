@@ -7,6 +7,8 @@
 #include "CCollider.h"
 
 CCollisionMgr::CCollisionMgr()
+	: m_mapColInfo{}
+	, m_arrCheck{}
 {
 
 }

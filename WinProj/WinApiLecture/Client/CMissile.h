@@ -21,6 +21,9 @@ public:
 
     virtual void OnCollisionEnter(CCollider* _pOther);
 
+private:
+    CLONE(CMissile);
+
 public:
     CMissile();
     ~CMissile();
