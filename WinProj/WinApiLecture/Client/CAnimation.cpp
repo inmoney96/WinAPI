@@ -5,6 +5,7 @@
 #include "CTexture.h"
 #include "CObject.h"
 #include "CTimeMgr.h"
+#include "CCamera.h"
 
 CAnimation::CAnimation()
 	: m_pAnimator(nullptr)
@@ -27,7 +28,7 @@ void CAnimation::update()
 
 	m_fAccTime += fDT;
 
-	if (m_fAccTime > m_vecFrm[m_iCurFrm].fDuration)
+	if ( m_vecFrm[m_iCurFrm].fDuration < m_fAccTime )
 	{
 		++m_iCurFrm;
 
@@ -35,6 +36,8 @@ void CAnimation::update()
 		{
 			m_iCurFrm = -1;
 			m_bfinish = true;
+			m_fAccTime = 0.f;
+			return;
 		}
 
 		m_fAccTime = m_fAccTime - m_vecFrm[m_iCurFrm].fDuration;
@@ -49,6 +52,10 @@ void CAnimation::render(HDC _dc)
 
 	CObject* pObj = m_pAnimator->GetObj();
 	Vec2 vPos = pObj->GetPos();
+
+	vPos += m_vecFrm[m_iCurFrm].vOffset;
+
+	vPos = CCamera::GetInst()->GetRenderPos(vPos);
 
 	TransparentBlt(_dc
 		, (int)(vPos.x - m_vecFrm[m_iCurFrm].vSlice.x / 2.f)
@@ -73,7 +80,7 @@ void CAnimation::Create(CTexture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vSte
 	{
 		frm.fDuration = _fDuration;
 		frm.vSlice = _vSliceSize;
-		frm.vLT = _vLT + _vStep * i;
+		frm.vLT = _vLT + _vStep * (float)i;
 
 		m_vecFrm.push_back(frm);
 	}
