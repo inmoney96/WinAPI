@@ -10,9 +10,15 @@ private:
 	vector<CObject*>	m_arrObj[(UINT)GROUP_TYPE::END];
 	wstring				m_strName;
 
+	UINT				m_iTileX;
+	UINT				m_iTileY;
+
 public:
 	void SetName(const wstring& _strName) { m_strName = _strName; }
 	const wstring& GetName() { return m_strName; }
+
+	UINT GetTileX() { return m_iTileX; }
+	UINT GetTileY() { return m_iTileY; }
 
 	virtual void update();
 	virtual void finalupdate();
@@ -23,6 +29,8 @@ public:
 
 
 public:
+
+
 	void AddObject(CObject* _pObj, GROUP_TYPE _eType) {
 		m_arrObj[(UINT)_eType].push_back(_pObj);
 	}
@@ -30,6 +38,8 @@ public:
 	const vector<CObject*>& GetGroupObject(GROUP_TYPE _eType) { return m_arrObj[(UINT)_eType]; }
 	void DeleteGroup(GROUP_TYPE _eTarget);
 	void DeleteAll();
+
+	void CreateTile(UINT _iXcount, UINT _iYcount);
 
 public:
 	CScene();

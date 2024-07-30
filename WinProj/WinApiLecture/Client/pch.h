@@ -9,6 +9,9 @@ using std::vector;
 using std::string;
 using std::wstring;
 
+#include <list>
+using std::list;
+
 #include <map>
 using std::map;
 using std::make_pair;

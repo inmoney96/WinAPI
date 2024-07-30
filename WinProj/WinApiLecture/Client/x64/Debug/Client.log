@@ -1,1 +1,6 @@
-﻿  Client.vcxproj -> C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Output\bin_debug\Client.exe
+﻿  CBtnUI.cpp
+  CPanelUI.cpp
+  CScene_Tool.cpp
+  CUI.cpp
+  CUIMgr.cpp
+  Client.vcxproj -> C:\Users\Administrator\Desktop\git\WinProj\WinApiLecture\Output\bin_debug\Client.exe

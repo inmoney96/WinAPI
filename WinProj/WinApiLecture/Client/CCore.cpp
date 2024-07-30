@@ -9,6 +9,7 @@
 #include "CCollisionMgr.h"
 #include "CEventMgr.h"
 #include "CCamera.h"
+#include "CUIMgr.h"
 
 
 
@@ -74,8 +75,14 @@ void CCore::progress()
 
 
 	CSceneMgr::GetInst()->update();
+
+	//충돌 체크
 	CCollisionMgr::GetInst()->update();
 
+	//UI 이벤트 체크
+	CUIMgr::GetInst()->update();
+
+	//화면 clear
 	Rectangle(m_memDC, -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
 
 	CSceneMgr::GetInst()->render(m_memDC);

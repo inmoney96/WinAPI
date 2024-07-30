@@ -139,6 +139,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //  WM_DESTROY  - 종료 메시지를 게시하고 반환합니다.
 //
 //
+
+INT_PTR CALLBACK TileCountProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
+
 LRESULT CALLBACK WndProc(HWND g_hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -152,6 +155,11 @@ LRESULT CALLBACK WndProc(HWND g_hWnd, UINT message, WPARAM wParam, LPARAM lParam
             case IDM_ABOUT:
                 DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), g_hWnd, About);
                 break;
+            
+            case IDD_MENU_TILE:
+                DialogBox(hInst, MAKEINTRESOURCE(IDD_MENU_TILE), g_hWnd, TileCountProc);
+                break;
+
             case IDM_EXIT:
                 DestroyWindow(g_hWnd);
                 break;

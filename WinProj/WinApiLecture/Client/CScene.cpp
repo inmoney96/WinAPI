@@ -2,6 +2,8 @@
 #include "CScene.h"
 
 #include "CObject.h"
+#include "CTile.h"
+#include "CResMgr.h"
 
 void CScene::update()
 {
@@ -49,6 +51,8 @@ void CScene::render(HDC _dc)
 
 
 CScene::CScene()
+	: m_iTileX(0)
+	, m_iTileY(0)
 {
 }
 
@@ -71,5 +75,26 @@ void CScene::DeleteAll()
 	for (UINT i = 0; i < (UINT)GROUP_TYPE::END; ++i)
 	{
 		DeleteGroup((GROUP_TYPE)i);
+	}
+}
+
+void CScene::CreateTile(UINT _iXcount, UINT _iYcount)
+{
+	m_iTileX = _iXcount;
+	m_iTileY = _iYcount;
+
+	CTexture* pTileTex = CResMgr::GetInst()->LoadTexture(L"Tile", L"\\bin\\content\\texture\\tile\\TILE.bmp");
+
+	for (UINT i = 0; i < _iXcount; ++i)
+	{
+		for (UINT j = 0; j < _iYcount; ++j)
+		{
+			CTile* pTile = new CTile();
+			pTile->SetPos(Vec2((float)(j * TILE_SIZE), (float)(i * TILE_SIZE)));
+			pTile->SetTexture(pTileTex);
+
+			AddObject(pTile, GROUP_TYPE::TILE);
+
+		}
 	}
 }
