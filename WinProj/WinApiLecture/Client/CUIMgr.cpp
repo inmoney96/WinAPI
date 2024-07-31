@@ -7,6 +7,7 @@
 #include "CKeyMgr.h"
 
 CUIMgr::CUIMgr()
+	: m_pFocusedUI(nullptr)
 {
 
 }
@@ -17,51 +18,74 @@ CUIMgr::~CUIMgr()
 
 void CUIMgr::update()
 {
-	CScene* pCurScene = CSceneMgr::GetInst()->GetCurScene();
-	const vector<CObject*>& vecUI = pCurScene->GetGroupObject(GROUP_TYPE::UI);
+	// 1. Foucsed UI 확인
+	m_pFocusedUI = GetTargetedUI();
 
-	bool bLbtnTap =	KEY_TAP(KEY::LBTN);
+	CUI* pTargetUI = GetTargetedUI(m_pFocusedUI);
+
+	bool bLbtnTap = KEY_TAP(KEY::LBTN);
 	bool bLbtnAway = KEY_AWAY(KEY::LBTN);
 
 
+	// 2. FoucsedUI 내에서, 부모 UI 포함 자식 UI 중 실제 타겟팅 된 UI를 가져온다.
+	if (nullptr != pTargetUI)
+	{
+		pTargetUI->MouseOn();
+
+
+		if (bLbtnTap)
+		{
+			pTargetUI->MouseLbtnDown();
+			pTargetUI->m_bLbtnDown = true;
+		}
+		else if (bLbtnAway)
+		{
+			pTargetUI->MouseLbtnUp();
+
+			if (pTargetUI->m_bLbtnDown)
+			{
+				pTargetUI->MouseLbtnClicked();
+			}
+
+			pTargetUI->m_bLbtnDown = false;
+		}
+
+
+
+	}
+
+		 
+		
+
+
+		
+	
+
+}
+
+CUI* CUIMgr::GetFocusedUI()
+{
+	CScene* pCurScene = CSceneMgr::GetInst()->GetCurScene();
+	vector<CObject*>& vecUI = pCurScene->GetUIGroup();
+
+	bool bLbtnTap = KEY_TAP(KEY::LBTN);
+
+	// 기존 포커싱 UI를 받아두고 변경되었는지 확인
+	CUI* pFocusedUI = m_pFocusedUI;
+
+	if (!bLbtnTap)
+	{
+		return pFocusedUI;
+	}
 
 	for (size_t i = 0; i < vecUI.size(); ++i)
 	{
-		CUI* pUI = (CUI*)vecUI[i];
-
-		// 부모 UI 포함 자식 UI 중 
-		pUI = GetTargetedUI(pUI);
-
-		if (nullptr != pUI)
-		{
-			pUI->MouseOn();
-			 
-
-			if (bLbtnTap)
-			{
-				pUI->MouseLbtnDown();
-				pUI->m_bLbtnDown = true;
-			}
-			else if (bLbtnAway)
-			{
-				pUI->MouseLbtnUp();
-
-				if (pUI->m_bLbtnDown)
-				{
-					pUI->MouseLbtnClicked();
-				}
-
-				pUI->m_bLbtnDown = false;
-			}
-
-			
-
-		}
-
+		vecUI[i];
 
 		
 	}
 
+	return nullptr;
 }
 
 CUI* CUIMgr::GetTargetedUI(CUI* _pParentUI)
